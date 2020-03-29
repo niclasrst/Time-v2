@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+html {
+	margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2f3542;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 20%;
+}
+
+.grey {
+  color: #394050;
+}
+
+h1 {
+	font-size: 4rem;
+  margin: 2rem 0 2rem 0;
+  color: #fff;
+}
+
+h2 {
+	font-size: 3.5rem;
+  margin: 1.75rem 0 1.75rem 0;
+  color: #fff;
+}
+
+h3 {
+	font-size: 3rem;
+  margin: 1.5rem 0 1.5rem 0;
+  color: #fff;
+}
+
+h4 {
+	font-size: 2.5rem;
+  margin: 1.25rem 0 1.25rem 0;
+  color: #fff;
+}
+
+h5 {
+	font-size: 2rem;
+  margin: 1rem 0 1rem 0;
+  color: #fff;
+}
+
+h6 {
+	font-size: 1.5rem;
+  margin: .75rem 0 .75rem 0;
+  color: #fff;
+}
+
+/**
+* settings button
+*/
+
+.settings {
+  width: 3rem;
+  height: 3rem;
+
+  position: absolute;
+
+  right: 1rem;
+  bottom: 1rem;
+
+  -ms-transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+
+  z-index: 999;
+}
+
+.settings:hover {
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+/**
+* modal
+*/
+
+.modal {
+  width: 0;
+  height: 3rem;
+
+  position: absolute;
+  text-align: center;
+
+  right: .75rem;
+  bottom: .75rem;
+
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.modal.active {
+  animation: zoomIn .75s ease 0s forwards;
+}
+
+.modal.inactive {
+  animation: zoomOut .75s ease .0s forwards;
+}
+
+.date {
+  color: #2f3542;
+  font-size: 3rem;
+  opacity: 0;
+}
+
+.date.active {
+  animation: fadeIn 1s ease .75s forwards;
+}
+
+.date.inactive {
+  animation: fadeOut .5s ease 0s forwards;
+}
+
+@keyframes zoomIn {
+  0% { width: 0; height: 3.5rem; }
+  50% { width: 25rem; height: 3.5rem; }
+  100% { width: 25rem; height: 30rem; }
+}
+
+@keyframes zoomOut {
+  0% { width: 25rem; height: 30rem; }
+  50% { width: 25rem; height: 3.5rem; }
+  100% { width: 0; height: 3.5rem; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+input {
+  width: 4rem;
+  height: 4rem;
+
+  margin: 2rem 0 0 1rem;
+  font-size: 1rem;
+
+  outline: none;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+
+  text-align: right;
+}
+
+#day { margin: 0; }
+#year { width: 8rem; }
+
+label {
+  position: relative;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  opacity: 0;
+}
+
+#dayL.active {
+  animation: fadeIn 1s ease .9s forwards;
+}
+
+#dayL.inactive {
+  animation: fadeOut .5s ease 0s forwards;
+}
+
+#monthL.active {
+  animation: fadeIn 1s ease .9s forwards;
+}
+
+#monthL.inactive {
+  animation: fadeOut .5s ease 0s forwards;
+}
+
+
+#yearL.active {
+  animation: fadeIn 1s ease .9s forwards;
+}
+
+#yearL.inactive {
+  animation: fadeOut .5s ease 0s forwards;
+}
+
+label:first-of-type {
+  margin-left: 0;
+}
+
+/**
+* submit button
+*/
+
+.button {
+  left: 8rem;
+  opacity: 0;
+
+  margin-top: 4rem;
+  padding: 1.25rem 3rem;
+
+  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  
+  line-height: 1.25;
+  background: #fc6e51;
+  text-decoration: none;
+  color: white;
+  
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  
+  position: absolute;
+  
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+  overflow: hidden;
+}
+
+.button.active {
+  animation: fadeIn 1s ease 1.05s forwards;
+}
+
+.button.inactive {
+  animation: fadeOut .5s ease 0s forwards;
+}
+
+.button:after {
+  content: '';
+  position: absolute;
+  
+  width: 0;
+  height: 0;
+
+  top: 50%;
+  left: 50%;
+  
+  -webkit-transform-style: flat;
+  transform-style: flat;
+  
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  
+  -webkit-transition: width .3s ease, height .3s ease;
+  transition: width .3s ease, height .3s ease;
+}
+
+.button:focus, .button:hover {
+  background: #fb512e;
+}
+
+.button:active:after {
+  width: 200px;
+  height: 200px;
+}
